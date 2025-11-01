@@ -113,8 +113,7 @@ Subsequently, I logged into the FTP service using the kiero user, obtained the j
 
 IP Address | Ports Open
 ------------------|----------------------------------------
-192.168.x.149       | **TCP**: 21,22,80
-                    | **UDP**: 161
+192.168.x.149       | **TCP**: 21,22,80 **UDP**: 161
 
 We run nmap to scan the target and found a few ports open.
 
