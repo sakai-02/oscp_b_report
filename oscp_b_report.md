@@ -132,12 +132,16 @@ SNMP enumeration revealed /home/john/RESET_PASSWD, which was found to contain th
 ```
 └─$ snmpbulkwalk -c public -v2c 192.168.126.149 .
 ```
+
 <img width="1112" height="341" alt="enumeration17" src="https://github.com/user-attachments/assets/d51aeb75-c92b-4063-9637-50ac4f576679" />
 
 I attempted an FTP connection as the kiero user and successfully logged in by entering the password “kiero”.
 The current directory contained the files id_sra, id_rsa.pub, and id_rsa_2, so I downloaded them.
+
 <img width="712" height="337" alt="enumeration19" src="https://github.com/user-attachments/assets/87ca7300-6850-4426-8265-0e83ee2cb626" />
+
 Check the id_rsa.pub file. You can see it's john's id_rsa.
+
 <img width="1519" height="109" alt="enumeration20" src="https://github.com/user-attachments/assets/50d9bd46-7f81-45aa-99a5-d711c6aa8aa6" />
 
 I successfully logged in by attempting an SSH connection using the private key with john.
