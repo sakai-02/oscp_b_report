@@ -159,51 +159,26 @@ I successfully logged in by attempting an SSH connection using the private key w
 <img width="807" height="403" alt="flag3" src="https://github.com/user-attachments/assets/6df66d8a-1e56-415e-a197-d894b6f69d20" />
 
 
+### Target #1 – 192.168.x.
 
+**Vulnerability Exploited:**
 
-
-192.168.x.150       | **TCP**: 22,8080
-192.168.x.151       | **TCP**: 80,3389,8021\
-**Proof of Concept Code Here:**
-Modifications to the existing exploit was needed and is highlighted in red.
-
-
-**Vulnerability Exploited:** MySQL Injection
-
-**System Vulnerable:** 172.16.203.135
-
-**Vulnerability Explanation:** A custom web application identified was prone to SQL Injection attacks.
-When performing the penetration test, John noticed error-based MySQL Injection on the taxid query string parameter.
-While enumerating table data, John was able to successfully extract login and password credentials that were unencrypted that also matched username and password accounts for the root user account on the operating system.
-This allowed for a successful breach of the Linux-based operating system as well as all data contained on the system.
-
-**Vulnerability Fix:** Since this is a custom web application, a specific update will not properly solve this issue
-The application will need to be programmed to properly sanitize user-input data, ensure that the user is running off of a limited user account, and that any sensitive data stored within the SQL database is properly encrypted.
-Custom error messages are highly recommended, as it becomes more challenging for the attacker to exploit a given weakness if errors are not being presented back to them.
+**Vulnerability Fix:**
 
 **Severity:** Critical
 
-**Proof of Concept Code Here:**
-`SELECT * FROM login WHERE id = 1 or 1=1 AND user LIKE "%root%"`
+**Steps to reproduce the attack**
 
-## Sample Report - Maintaining Access
 
-Maintaining access to a system is important to us as attackers, ensuring that we can get back into a system after it has been exploited is invaluable.
-The maintaining access phase of the penetration test focuses on ensuring that once the focused attack has occurred (i.e. a buffer overflow), we have administrative access over the system again.
-Many exploits may only be exploitable once and we may never be able to get back into a system after we have already performed the exploit.
+### Service Enumeration
 
-John added administrator and root level accounts on all systems compromised.
-In addition to the administrative/root access, a Metasploit meterpreter service was installed on the machine to ensure that additional access could be established.
+### Initial Access –
 
-## Sample Report - House Cleaning
+**Local.txt value:**
 
-The house cleaning portions of the assessment ensures that remnants of the penetration test are removed.
-Often fragments of tools or user accounts are left on an organizations computer which can cause security issues down the road.
-Ensuring that we are meticulous and no remnants of our penetration test are left over is important.
+### Privilege Escalation -
 
-After the trophies on the exam network were completed, John removed all user accounts and passwords as well as the meterpreter services installed on the system.
-Offensive Security should not have to remove any user accounts or services from the system.
+**Proof.txt value:**
 
-# Additional Items Not Mentioned in the Report
-
-This section is placed for any additional items that were not mentioned in the overall report.
+192.168.x.150       | **TCP**: 22,8080
+192.168.x.151       | **TCP**: 80,3389,8021\
