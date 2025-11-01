@@ -120,10 +120,13 @@ We run nmap to scan the target and found a few ports open.
 ```
 └─$ nmap --min-rate 5000 -sV -sT -sC -Pn -p- 192.168.156.149
 ```
+
 <img width="964" height="407" alt="portscan1" src="https://github.com/user-attachments/assets/641a0f5d-1257-4eaa-a272-b6e11de0b0eb" />
+
 ```
 └─$ nmap -sU -sV -Pn --top-ports 100 192.168.156.149
 ```
+
 <img width="966" height="236" alt="portscan2" src="https://github.com/user-attachments/assets/bd2cc32c-6c94-4330-8eb5-2620e3f2bb6b" />
 
 ### Initial Access – SSH Login
@@ -152,6 +155,7 @@ I successfully logged in by attempting an SSH connection using the private key w
 <img width="856" height="261" alt="access3" src="https://github.com/user-attachments/assets/0f2fa6d0-04f9-41f5-bcb7-3d85ffbf39d5" />
 
 **Local.txt value:**
+
 <img width="807" height="403" alt="flag3" src="https://github.com/user-attachments/assets/6df66d8a-1e56-415e-a197-d894b6f69d20" />
 
 
