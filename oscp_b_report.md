@@ -119,11 +119,12 @@ We run nmap to scan the target and found a few ports open.
 
 ```
 └─$ nmap --min-rate 5000 -sV -sT -sC -Pn -p- 192.168.156.149
-``` 
-
+```
+<img width="964" height="407" alt="portscan1" src="https://github.com/user-attachments/assets/641a0f5d-1257-4eaa-a272-b6e11de0b0eb" />
 ```
 └─$ nmap -sU -sV -Pn --top-ports 100 192.168.156.149
 ```
+<img width="966" height="236" alt="portscan2" src="https://github.com/user-attachments/assets/bd2cc32c-6c94-4330-8eb5-2620e3f2bb6b" />
 
 ### Initial Access – SSH Login
 
@@ -131,19 +132,22 @@ SNMP enumeration revealed /home/john/RESET_PASSWD, which was found to contain th
 ```
 └─$ snmpbulkwalk -c public -v2c 192.168.126.149 .
 ```
+<img width="1112" height="341" alt="enumeration17" src="https://github.com/user-attachments/assets/d51aeb75-c92b-4063-9637-50ac4f576679" />
 
 The current directory contained the files id_sra, id_rsa.pub, and id_rsa_2, so I downloaded them.
-
+<img width="712" height="337" alt="enumeration19" src="https://github.com/user-attachments/assets/87ca7300-6850-4426-8265-0e83ee2cb626" />
 Check the id_rsa.pub file. You can see it's john's id_rsa.
+<img width="1519" height="109" alt="enumeration20" src="https://github.com/user-attachments/assets/50d9bd46-7f81-45aa-99a5-d711c6aa8aa6" />
 
 I successfully logged in by attempting an SSH connection using the private key with john.
 
 ```
 └─$ ssh -i id_rsa john@192.168.126.149
 ```
+<img width="856" height="261" alt="access3" src="https://github.com/user-attachments/assets/0f2fa6d0-04f9-41f5-bcb7-3d85ffbf39d5" />
 
 **Local.txt value:**
-
+<img width="807" height="403" alt="flag3" src="https://github.com/user-attachments/assets/6df66d8a-1e56-415e-a197-d894b6f69d20" />
 
 
 
