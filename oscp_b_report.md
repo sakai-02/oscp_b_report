@@ -98,7 +98,7 @@ During this penetration test, John was able to successfully gain access to 10 ou
 
 **Vulnerability Exploited:** Ability Server 2.34 FTP STOR Buffer Overflow
 
-**System Vulnerable:** 172.16.203.134
+**System Vulnerable:** 192.168.x.149 
 
 **Vulnerability Explanation:**
 Ability Server 2.34 is subject to a buffer overflow vulnerability in STOR field.
