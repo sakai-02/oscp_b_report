@@ -94,10 +94,10 @@ During this penetration test, John was able to successfully gain access to 10 ou
 
 ### Target #1 – 192.168.x.149
 
-**Vulnerability Exploited:** Leakage of Authentication Information via SMTP 
+**Vulnerability Exploited:** Leakage of Authentication Information via SNMP 
 
 **Vulnerability Explanation:**
-SMTP enumeration revealed that the keiro user's password was set to the default value.
+SNMP enumeration revealed that the keiro user's password was set to the default value.
 
 **Vulnerability Fix:**
 Change keiro user password
@@ -128,7 +128,10 @@ We run nmap to scan the target and found a few ports open.
 
 ### Initial Access – SSH Login
 
-SNTP enumeration revealed /home/john/RESET_PASSWD, which was found to contain the default password for the kiero user.
+SNMP enumeration revealed /home/john/RESET_PASSWD, which was found to contain the default password for the kiero user.
+```
+└─$ snmpbulkwalk -c public -v2c 192.168.126.149 .
+```
 
 The current directory contained the files id_sra, id_rsa.pub, and id_rsa_2, so I downloaded them.
 
